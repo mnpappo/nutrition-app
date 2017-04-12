@@ -1,0 +1,42 @@
+<!--
+  Generated template for the PustiGun page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="">
+    <ion-title>পুষ্টিগুণ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <h1 text-center>{{veg_name}}</h1> -->
+  <div class="selected_image">
+
+    <ion-card>
+      <img center src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+    </ion-card>
+  </div>
+
+  <h3 text-center padding-top color="danger" [hidden]="lastImage !== null">একটি ছবি নির্বাচন করুন</h3>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-left (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon> ছবি তুলুন
+      </button>
+    </ion-buttons>
+
+    <ion-buttons right>
+      <button ion-button color="secondary" clear icon-right (click)="uploadImage()" [disabled]="lastImage === null">
+        <ion-icon name="cloud-upload"></ion-icon>নির্বাচন করুন
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
